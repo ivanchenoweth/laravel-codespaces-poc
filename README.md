@@ -35,23 +35,29 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
 my solution:
 
-1.- I killed dockerd process
+1.- I killed dockerd process:
 
-#(master) $ ps -aux | grep dockerd
+`#(master) $ ps -aux | grep dockerd`
 
-#(master) $ kill -9 DOCKERD_PROCESS_ID
+`#(master) $ kill -9 DOCKERD_PROCESS_ID`
 
-#(master) $ sudo dockerd &
+`#(master) $ sudo dockerd &`
 
 Run dockerd successfully!
 
 ## Laravel URL and mempry problems:
+
 I suggest to use this in web.php 
 
+
+
+```
 ini_set('memory_limit', -1);
 $url = config('app.url');
 URL::forceRootUrl($url);
+if (App::environment('production')) {  
+    URL::forceScheme('https');  
+}
+ ```
 
-Route::get('/', function () {
-    return view('welcome');
-});
+I disabled debug mode in the .env
