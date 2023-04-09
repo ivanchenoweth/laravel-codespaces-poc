@@ -16,6 +16,7 @@ https://www.youtube.com/watch?v=hPDASavmNeo&ab_channel=JavierTer%C3%A1nGonz%C3%A
 
 https://laravel.com/docs/9.x/installation/#getting-started-on-linux
 
+TRUBLESHOOTINGS:
 
 If accidentally you created a mysql volume by running sail without an .env file, which was persistent the whole time thus of course having no user and database configured.
 
@@ -25,3 +26,21 @@ Now everything worked out and I can migrate my data.
 
 Or, complete rebuild all the docker containers:
 ./vendor/bin/sail build --no-cache
+
+Problems with docker:
+
+#(master) $ docker ps
+
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+my solution:
+
+1.- I killed dockerd process
+
+#(master) $ ps -aux | grep dockerd
+
+#(master) $ kill -9 DOCKERD_PROCESS_ID
+
+#(master) $ sudo dockerd &
+
+Run dockerd successfully!
