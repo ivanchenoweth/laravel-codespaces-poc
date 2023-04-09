@@ -44,3 +44,14 @@ my solution:
 #(master) $ sudo dockerd &
 
 Run dockerd successfully!
+
+## Laravel URL and mempry problems:
+I suggest to use this in web.php 
+
+ini_set('memory_limit', -1);
+$url = config('app.url');
+URL::forceRootUrl($url);
+
+Route::get('/', function () {
+    return view('welcome');
+});
