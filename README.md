@@ -50,7 +50,6 @@ Run dockerd successfully!
 I suggest to use this in web.php 
 
 
-
 ```
 ini_set('memory_limit', -1);
 $url = config('app.url');
@@ -60,4 +59,9 @@ if (App::environment('production')) {
 }
  ```
 
+##
+
 I disabled debug mode in the .env
+
+NOTE: Migrations has to be run inside of the container
+        
