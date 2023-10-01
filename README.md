@@ -1,4 +1,5 @@
-# laravel-codespaces-poc2
+# laravel-codespaces-poc
+
 probe of concept of laravel with codespaces
 
 ## Steps
@@ -6,13 +7,11 @@ probe of concept of laravel with codespaces
 curl -s https://laravel.build/example-app | bash
 
 
-
 Following:
 
-GitHub Codespaces Laravel. Instalación y primeros pasos
+GitHub Codespaces Laravel. Instalation and first steps
 
 https://www.youtube.com/watch?v=hPDASavmNeo&ab_channel=JavierTer%C3%A1nGonz%C3%A1lez
-
 
 https://laravel.com/docs/9.x/installation/#getting-started-on-linux
 
